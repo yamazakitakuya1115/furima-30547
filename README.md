@@ -20,7 +20,7 @@
 - has_one :buyer
 
 ## items テーブル
-| Column   | Type       | Options
+| Column   | Type       | Options                        |
 | ---------| ---------- | ------------------------------ |
 | name     | string     | null: false                    |
 | explain  | text       | null: false                    |
