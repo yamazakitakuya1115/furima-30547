@@ -1,56 +1,24 @@
-# テーブル設計
+# README
 
-## users テーブル
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| name        | string  | null: false |
-| email       | string  | null: false |
-| password    | string  | null: false |
-| first_kanji | string  | null: false |
-| last_kanji  | string  | null: false |
-| first_kana  | string  | null: false |
-| last_kana   | string  | null: false |
-| year        | integer | null: false |
-| month       | integer | null: false |
-| day         | integer | null: false |
+Things you may want to cover:
 
-### Association
-- has_many :items
-- has_one :buyer
+* Ruby version
 
-## items テーブル
-| Column          | Type       | Options
-| --------------- | ---------- | ------------------------------ |
-| category        | string     | null: false                    |
-| status          | string     | null: false                    |
-| delivery_charge | string     | null: false                    |
-| area            | string     | null: false                    |
-| date            | string     | null: false                    |
-| sold_out        | boolean    | null: false                    |
-| user            | references | null: false, foreign_key: true |
-| buyer           | references | foreign_key: true              |
+* System dependencies
 
-### Associations
-- belongs_to :user
-- has_one :buyer
+* Configuration
 
-## buyers テーブル
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| card_number    | integer    | null: false                    |
-| limit_year     | integer    | null: false                    |
-| limit_month    | integer    | null: false                    |
-| security_code  | integer    | null: false                    |
-| postal_code    | integer    | null: false                    |
-| prefectures    | string     | null: false                    |
-| municipalities | string     | null: false                    |
-| address        | string     | null: false                    |
-| building       | string     |                                |
-| phone_number   | integer    | null: false                    |
-| item           | references | null: false, foreign_key: true |
-| user           | references | null: false, foreign_key: true |
+* Database creation
 
-### Associations
-- belongs_to :user
-- belongs_to :item
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
