@@ -58,3 +58,4 @@ group :production do
 end
 gem 'devise'
 gem 'pry-rails'
+gem 'rails-i18n'

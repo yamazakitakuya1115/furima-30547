@@ -2,9 +2,18 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def new
+  end
+
   def create
     binding.pry
-    User.create(user_params)
+    @user = User.create(user_params)
+    if @user.valid?
+      @user.save
+      redirect_to action: :index
+    else
+      render action: :new
+    end
   end
 
   private
