@@ -18,7 +18,4 @@ class Item < ApplicationRecord
   # 販売価格に関するバリデーション（300~9,999,999円の範囲で可）
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "は300〜9,999,999円に設定してください"}
 
-  def was_attached?
-    self.image.attached?
-  end
 end
