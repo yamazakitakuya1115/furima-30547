@@ -4,9 +4,11 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
+    binding.pry
     Item.create(item_params)
   end
 
