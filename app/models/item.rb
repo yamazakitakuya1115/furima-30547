@@ -9,7 +9,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  validates :image, :name, :explain, :category_id, :status_id, :delivery_id, :prefecture_id, :schedule_id, :price, presence: true
+  validates :image, presence: true
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :explain, presence: true, length: { maximum: 1000 }
   validates :category_id, numericality: { other_than: 0, message: "を選択してください" }
   validates :status_id, numericality: { other_than: 0, message: "を選択してください"  }
   validates :delivery_id, numericality: { other_than: 0, message: "を選択してください"  }
