@@ -9,14 +9,15 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  validates :image, presence: true
-  validates :name, presence: true, length: { maximum: 40 }
-  validates :explain, presence: true, length: { maximum: 1000 }
-  validates :category_id, numericality: { other_than: 0, message: 'を選択してください' }
-  validates :status_id, numericality: { other_than: 0, message: 'を選択してください' }
-  validates :delivery_id, numericality: { other_than: 0, message: 'を選択してください' }
-  validates :prefecture_id, numericality: { other_than: 0, message: 'を選択してください' }
-  validates :schedule_id, numericality: { other_than: 0, message: 'を選択してください' }
-  # 販売価格に関するバリデーション（300~9,999,999円の範囲で可）
+  with_options presence: true do
+    validates :image
+    validates :name, length: { maximum: 40 }
+    validates :explain, length: { maximum: 1000 }
+  end
+  
+  with_options numericality: { other_than: 0, message: 'を選択してください' } do
+    validates :category_id, :status_id, :delivery_id, :prefecture_id, :schedule_id
+  end
+  
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'は300〜9,999,999円に設定してください' }
 end
