@@ -13,6 +13,7 @@ function item() {
     addTaxPrice.removeAttribute("style", "color: red;");
     profit.removeAttribute("style", "color: red;");
 
+    // 販売手数料、販売利益の計算
     if (itemPrice.value == 0) {
       addTaxPrice.innerHTML = "円";
       profit.innerHTML = "円";
@@ -38,6 +39,37 @@ function item() {
       profit.setAttribute("style", "color: red;");
     }
   });
+
+  // 商品名の文字数カウント
+  const itemName = document.getElementById("item-name");
+  itemName.addEventListener("keyup", () => {
+    const itemNameCountVal = itemName.value.length;
+    const itemNameCount = document.getElementById("item-name-count");
+
+    itemNameCount.innerHTML = `${itemNameCountVal}`;
+    if (itemNameCountVal >= 40) {
+      itemNameCount.setAttribute("style", "color: red;");
+    } else {
+      itemNameCount.removeAttribute("style", "color: red;");
+    }
+  })
+
+
+  // 商品説明の文字数カウント
+  const itemExplain = document.getElementById("item-info");
+  itemExplain.addEventListener("keyup", () => {
+    const itemExplainCountVal = itemExplain.value.length;
+    const itemExplainCount = document.getElementById("item-explain-count");
+
+    itemExplainCount.innerHTML = `${itemExplainCountVal}`;
+    if (itemExplainCountVal >= 1000) {
+      itemExplainCount.setAttribute("style", "color: red;");
+    } else {
+      itemExplainCount.removeAttribute("style", "color: red;");
+    }
+  })
+
+
 }
 
 window.addEventListener('load', item);
