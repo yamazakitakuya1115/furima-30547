@@ -135,7 +135,7 @@
                 <div class='sold-out'>
                 <%# <span>Sold Out!!</span> ※商品購入機能実装後にやる※ %>
                 </div>
-                <%# //商品が売れていればsold outを表示しましょう %>
+                  <%# //商品が売れていればsold outを表示しましょう %>
               </div>
               <div class='item-info'>
                 <h3 class='item-name'>
@@ -143,16 +143,15 @@
                 </h3>
                 <div class='item-price'>
                   <span><%= item.price %>円<br>(税込み)</span>
-                  <div class='star-btn'>
-                    <%= image_tag "star.png", class:"star-icon" %>
-                    <span class='star-count'>0</span>
-                  </div>
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
                 </div>
               </div>
             <% end %>
           </li>
+        <% end %>
       <% else %>
-
       <%# 商品がない場合のダミー %>
         <li class='list'>
           <%= link_to '#' do %>
@@ -161,12 +160,11 @@
               <h3 class='item-name'>
                   商品を出品してね！
               </h3>
-              <div class='item-price'>
-                <span>99999999円<br>(税込み)</span>
-                <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
-                </div>
+            <div class='item-price'>
+              <span>99999999円<br>(税込み)</span>
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
               </div>
             </div>
           <% end %>
