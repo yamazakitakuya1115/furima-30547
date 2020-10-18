@@ -1,0 +1,9 @@
+.item-lists :hover {
+  background-color: oldlace;
+  transition: 200ms;
+}
+
+
+.item-info {
+  background-color: oldlace;
+}
