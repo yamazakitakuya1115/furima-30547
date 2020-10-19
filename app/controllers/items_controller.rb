@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
-  before_action :move_to_login_page, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :move_to_index, only: :edit
 
   def index
@@ -42,10 +42,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def move_to_login_page
-    redirect_to new_user_session_path unless user_signed_in?
   end
 
   def move_to_index
