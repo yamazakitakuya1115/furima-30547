@@ -56,9 +56,9 @@
           <span class="indispensable">必須</span>
         </div>
         <div class='input-expiration-date-wrap'>
-          <%= f.text_area :card_month, class:"input-expiration-date", name:"order[exp_month]", id:"card-exp-month", placeholder:"例)3" %>
+          <%= f.text_field :card_month, class:"input-expiration-date", name:"order[exp_month]", id:"card-exp-month", placeholder:"例)3" %>
           <p>月</p>
-          <%= f.text_area :card_year, class:"input-expiration-date", name:"order[exp_year]", id:"card-exp-year", placeholder:"例)23" %>
+          <%= f.text_field :card_year, class:"input-expiration-date", name:"order[exp_year]", id:"card-exp-year", placeholder:"例)23" %>
           <p>年</p>
         </div>
       </div>
