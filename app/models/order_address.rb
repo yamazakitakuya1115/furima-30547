@@ -1,9 +1,9 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :order_id
+  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :order_id, :token
 
   with_options presence: true do
-    validates :postal_code, :city, :house_number, :phone_number
+    validates :city, :house_number, :phone_number, :token
   end
   validates :prefecture_id, numericality: { other_than: 0, message: 'を選択してください' }
 
