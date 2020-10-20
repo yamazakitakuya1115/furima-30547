@@ -2,11 +2,7 @@
   color: black;
 }
 
-.item-lists :hover {
-  background-color: lightyellow;
+.list :hover {
+  opacity: 0.5;
   transition: 200ms;
-}
-
-.item-info {
-  background-color: lightyellow;
 }
