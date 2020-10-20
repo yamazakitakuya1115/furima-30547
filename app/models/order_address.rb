@@ -4,7 +4,7 @@ class OrderAddress
 
   with_options presence: true do
     validates :city, :house_number, :token
-    validates :postal_code, format: {with: /\A\d{3}[-]\d{4}\z/, message: 'はハイフンを含めた7桁の半角数字です'}
+    validates :postal_code, format: {with: /\A\d{3}[-]\d{4}\z/, message: 'が正しくありません'}
     validates :phone_number, format: {with: /\A0\d{9,10}\z/, message: 'が正しくありません'}
   end
   validates :prefecture_id, numericality: { other_than: 0, message: 'を選択してください' }
