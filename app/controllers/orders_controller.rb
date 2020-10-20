@@ -44,6 +44,6 @@ class OrdersController < ApplicationController
   end
 
   def sold_out
-    redirect_to root_path if Order.find_by(item_id: @item.id)
+    redirect_to root_path if @item.order
   end
 end
