@@ -13,6 +13,6 @@ FactoryBot.define do
     delivery_id { 1 }
     prefecture_id { 1 }
     schedule_id { 1 }
-    price { 10000 }
+    price { 10_000 }
   end
 end

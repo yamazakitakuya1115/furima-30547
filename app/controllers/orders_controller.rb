@@ -31,24 +31,19 @@ class OrdersController < ApplicationController
 
   def move_to_index
     @item = Item.find(params[:item_id])
-    if current_user.id == @item.user.id
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id == @item.user.id
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.price,
       card: order_address_params[:token],
       currency: 'jpy'
-      )
+    )
   end
 
   def sold_out
-    if Order.find_by(item_id: @item.id)
-    redirect_to root_path
-    end
+    redirect_to root_path if Order.find_by(item_id: @item.id)
   end
-
 end
