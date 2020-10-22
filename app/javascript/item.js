@@ -114,5 +114,10 @@ function editPage() {
 };
 
 
-window.addEventListener('load', item);
-window.addEventListener('load', editPage);
+if (document.URL.match(/new/)) {
+  window.addEventListener('load', item);
+};
+
+if (document.URL.match(/edit/)) {
+  window.addEventListener('load', editPage);
+};
