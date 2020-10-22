@@ -122,7 +122,7 @@
     </div>
     <%# /配送先の入力 %>
     <div class='buy-btn'>
-      <%= f.submit "購入" ,class:"buy-red-btn" %>
+      <%= f.submit "購入" ,class:"buy-red-btn",  data: { confirm: "この内容で購入してよろしいですか？" } %>
     </div>
     <% end %>
   </div>

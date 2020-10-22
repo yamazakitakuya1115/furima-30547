@@ -27,7 +27,7 @@
       <% if user_signed_in? && current_user == @item.user %>
         <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
-        <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
+        <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy',  data: { confirm: "商品を削除しますか？" } %>
       <% end %>
       <%# ログイン状態かつ出品者でない場合購入ボタンを表示 %>
       <% if user_signed_in? && current_user != @item.user %>
