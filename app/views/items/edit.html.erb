@@ -11,6 +11,7 @@ app/assets/stylesheets/items/new.css %>
 
     <%= render 'shared/error_messages', model: @item %>
 
+
     <%# 出品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -23,6 +24,11 @@ app/assets/stylesheets/items/new.css %>
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
+      <div id="image-preview"></div>
+    </div>
+      現在の出品画像
+    <div>
+      <%= image_tag @item.image, class:"now-item" %>
     </div>
     <%# /出品画像 %>
     <%# 商品名と商品説明 %>
@@ -141,8 +147,10 @@ app/assets/stylesheets/items/new.css %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "変更する" ,class:"sell-btn",  data: { confirm: "この内容に変更しますか？" } %>
-      <%=link_to 'もどる', item_path(@item.id), class:"back-btn" %>
     </div>
+      <div class="back-btn-contents">
+        <%=link_to 'もどる', item_path(@item.id), class:"back-btn" %>
+      </div>
     <%# /下部ボタン %>
   </div>
   <% end %>

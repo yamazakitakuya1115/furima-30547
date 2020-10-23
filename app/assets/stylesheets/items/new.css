@@ -79,11 +79,25 @@ a:hover {
 /* /共通 */
 
 /* 出品画像 */
+
+.img-prev {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  border: solid 2px lightblue;
+}
+
+.image-preview-box :hover {
+  opacity: 0.7;
+  transition: 200ms;
+}
+
 .img-upload {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 2vh 0;
+  align-items: center;
 }
 
 .click-upload {

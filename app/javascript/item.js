@@ -88,33 +88,10 @@ function editPage() {
   addTaxPrice.innerHTML = `${taxPrice}円`;
   const gainPrice = Math.floor(itemPrice.value - taxPrice);
   profit.innerHTML = `${gainPrice}円`;
-
-  // 商品名の文字数カウント
-  const itemName = document.getElementById("item-name");
-  const itemNameCountVal = itemName.value.length;
-  const itemNameCount = document.getElementById("item-name-count");
-
-  itemNameCount.innerHTML = `${itemNameCountVal}`;
-  if (itemNameCountVal >= 40) {
-    itemNameCount.setAttribute("style", "color: red;");
-  } else {
-    itemNameCount.removeAttribute("style", "color: red;");
-  };
-
-  // 商品説明の文字数カウント
-  const itemExplain = document.getElementById("item-info");
-  const itemExplainCountVal = itemExplain.value.length;
-  const itemExplainCount = document.getElementById("item-explain-count");
-  itemExplainCount.innerHTML = `${itemExplainCountVal}`;
-  if (itemExplainCountVal >= 1000) {
-    itemExplainCount.setAttribute("style", "color: red;");
-  } else {
-    itemExplainCount.removeAttribute("style", "color: red;");
-  };
 };
 
 
-if (document.URL.match(/new/)) {
+if (document.URL.match(/new/) || (document.URL.match(/edit/))) {
   window.addEventListener('load', item);
 };
 
