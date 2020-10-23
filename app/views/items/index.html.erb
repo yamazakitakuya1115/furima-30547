@@ -130,7 +130,9 @@
           <li class='list'>
             <%= link_to item_path(item.id) do %>
               <div class='item-img-content'>
-                <%= image_tag item.image, class: "item-img" if item.image.attached? %>
+                <div class="item-img-top">
+                  <%= image_tag item.image, class: "item-img" if item.image.attached? %>
+                </div>
                   <% if item.order %>
                     <div class='sold-out'>
                       <span>Sold Out!!</span>
@@ -175,10 +177,10 @@
   </div>
   <%# /商品一覧 %>
 </div>
-<div class='purchase-btn'>
-  <span class='purchase-btn-text'>出品する</span>
-  <a href="/items/new">
+<a href="/items/new" class="new-btn">
+  <div class='purchase-btn'>
+    <span class='purchase-btn-text'>出品する</span>
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  </a>
-</div>
+  </div>
+</a>
 <%= render "shared/footer" %>

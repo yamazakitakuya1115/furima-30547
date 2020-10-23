@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .main {
   background: #f8f8f8;
 }
@@ -260,6 +264,11 @@ a {
   height: 33vh;
 }
 
+.item-img-top :hover {
+  opacity: 0.7;
+  transition: 200ms;
+}
+
 .sold-out {
   position: absolute;
   top: 40%;
@@ -284,10 +293,17 @@ a {
 
 .item-name {
   font-size: 2.5vh;
+  color: black;
+}
+
+.item-name :hover {
+  font-size: 2.5vh;
+  color: lightgray;
 }
 
 .item-price {
   font-size: 1.5vh;
+  color: black;
   display: flex;
   justify-content: space-between;
 }

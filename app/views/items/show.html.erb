@@ -25,13 +25,19 @@
 
     <% unless @item.order %>
       <% if user_signed_in? && current_user == @item.user %>
-        <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+        <div class="red-btn">
+          <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+        </div>
         <p class='or-text'>or</p>
-        <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy',  data: { confirm: "商品を削除しますか？" } %>
+        <div class="delete-btn">
+          <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy',  data: { confirm: "商品を削除しますか？" } %>
+        </div>
       <% end %>
       <%# ログイン状態かつ出品者でない場合購入ボタンを表示 %>
       <% if user_signed_in? && current_user != @item.user %>
-        <%= link_to '購入画面に進む', item_orders_path(@item) ,class:"item-red-btn"%>
+        <div class="red-btn">
+          <%= link_to '購入画面に進む', item_orders_path(@item) ,class:"item-red-btn"%>
+        </div>
       <% end %>
     <% end %>
 

@@ -9,6 +9,11 @@
   padding: 15px;
 }
 
+
+.new-btn :hover {
+  background: lightpink;
+}
+
 .purchase-btn-text {
   color: #fff;
   display: block;

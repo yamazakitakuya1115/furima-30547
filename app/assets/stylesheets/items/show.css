@@ -60,8 +60,21 @@
   padding: 2vh 10vw;
 }
 
+
+.red-btn :hover {
+  text-align: center;
+  background-color: lightpink;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  text-decoration: none;
+}
+
 .or-text {
   font-size: 20px;
+  margin: 10px 0;
 }
 
 .item-destroy {
@@ -71,6 +84,16 @@
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+}
+
+.delete-btn :hover {
+  background-color: #eeeeee;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  text-decoration: none;
 }
 
 .item-explain-box {
