@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :move_to_index, only: [:edit, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy, :search]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -37,6 +37,10 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to action: :index
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
   end
 
   private
