@@ -39,6 +39,11 @@ class ItemsController < ApplicationController
     redirect_to action: :index
   end
 
+  def search
+    @items = Item.search(params[:keyword]).order('created_at DESC')
+    @search_word = params[:keyword]
+  end
+
   private
 
   def item_params
