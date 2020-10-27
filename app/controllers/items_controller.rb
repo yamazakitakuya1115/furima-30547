@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :move_to_index, only: [:edit, :destroy, :search]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -40,7 +40,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
+    @items = Item.search(params[:keyword]).order('created_at DESC')
+    @search_word = params[:keyword]
   end
 
   private
