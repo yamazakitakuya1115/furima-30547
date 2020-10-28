@@ -10,6 +10,23 @@ a:hover {
   background: #f8f8f8;
 }
 
+.categories {
+  position: absolute;
+  transition: 200ms;
+  border: solid 1px gray;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+  z-index: 10;
+}
+
+.categories>.category-menu {
+  padding: 10px 20px 0 10px;
+  background-color: white;
+}
+
+.hidden {
+  display: none;
+}
+
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;

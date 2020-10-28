@@ -3,7 +3,7 @@
   <div class='search-bar-contents'>
     <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
 <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "商品名から探す", class: "input-box", size: "40"%>
+  <%= form.text_field :keyword, placeholder: "商品名から探す", class: "input-box"%>
     <button class="search-button">
       <%= image_tag "search.png", class:"search-icon" %>
     </button>
@@ -11,7 +11,20 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li><%= link_to 'カテゴリー', "#", class: "category-list", id: "category-list" %>
+        <ul class='categories hidden' id="category-menu">
+          <li class='category-menu'>レディース</li>
+          <li class='category-menu'>メンズ</li>
+          <li class='category-menu'>ベビー・キッズ</li>
+          <li class='category-menu'>インテリア・住まい・小物</li>
+          <li class='category-menu'>本・音楽・ゲーム</li>
+          <li class='category-menu'>おもちゃ・ホビー・グッズ</li>
+          <li class='category-menu'>家電・スマホ・カメラ</li>
+          <li class='category-menu'>スポーツ・レジャー</li>
+          <li class='category-menu'>ハンドメイド</li>
+          <li class='category-menu'>その他</li>
+        </ul>
+      </li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
