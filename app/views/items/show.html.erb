@@ -91,21 +91,33 @@
       <% @comments.each do |comment|%>
         <% if comment.user_id == @item.user_id%>
           <div class="comment-balloon-left">
+            <div class="comment-top">
+              <div class="comment-nickname">
+                <p>出品者：<%= "#{comment.user.nickname}" %></p>
+              </div>
+              <div class="comment-date">
+                <%= l comment.created_at, class: "comment-date" %>
+              </div>
+            </div>
+            <div class="comment-bottom">
+              <%= comment.text %>
+            </div>
+          </div>
         <% else %>
           <div class="comment-balloon-right">
+            <div class="comment-top">
+              <div class="comment-nickname">
+                <p>投稿者：<%= "#{comment.user.nickname}" %></p>
+              </div>
+              <div class="comment-date">
+                <%= l comment.created_at, class: "comment-date" %>
+              </div>
+            </div>
+            <div class="comment-bottom">
+              <%= comment.text %>
+            </div>
+          </div>
         <% end %>
-          <div class="comment-top">
-            <div class="comment-nickname">
-              <p>出品者：<%= "#{comment.user.nickname}" %></p>
-            </div>
-            <div class="comment-date">
-              <%= l comment.created_at, class: "comment-date" %>
-            </div>
-          </div>
-          <div class="comment-bottom">
-            <%= comment.text %>
-          </div>
-        </div>
       <% end %>
     <% end %>
     <% if user_signed_in? %>
