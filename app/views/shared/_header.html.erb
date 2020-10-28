@@ -11,21 +11,26 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list", id: "category-list" %>
-        <ul class='categories hidden' id="category-menu">
-          <li class='category-menu'>レディース</li>
-          <li class='category-menu'>メンズ</li>
-          <li class='category-menu'>ベビー・キッズ</li>
-          <li class='category-menu'>インテリア・住まい・小物</li>
-          <li class='category-menu'>本・音楽・ゲーム</li>
-          <li class='category-menu'>おもちゃ・ホビー・グッズ</li>
-          <li class='category-menu'>家電・スマホ・カメラ</li>
-          <li class='category-menu'>スポーツ・レジャー</li>
-          <li class='category-menu'>ハンドメイド</li>
-          <li class='category-menu'>その他</li>
-        </ul>
+      <li>
+        <div class="category-list", id="category-list">カテゴリー
+        </div>
+        <div class='categories hidden' id="category-menu">
+          <%= link_to 'レディース', category_path(category_id: 1), class: "category-menu" %>
+          <%= link_to 'メンズ', category_path(category_id: 2), class: "category-menu"  %>
+          <%= link_to 'ベビー・キッズ', category_path(category_id: 3), class: "category-menu"  %>
+          <%= link_to 'インテリア・住まい・小物', category_path(category_id: 4), class: "category-menu"  %>
+          <%= link_to '本・音楽・ゲーム', category_path(category_id: 5), class: "category-menu"  %>
+          <%= link_to 'おもちゃ・ホビー・グッズ', category_path(category_id: 6), class: "category-menu"  %>
+          <%= link_to '家電・スマホ・カメラ', category_path(category_id: 7), class: "category-menu"  %>
+          <%= link_to 'スポーツ・レジャー', category_path(category_id: 8), class: "category-menu"  %>
+          <%= link_to 'ハンドメイド', category_path(category_id: 9), class: "category-menu"  %>
+          <%= link_to 'その他', category_path(category_id: 10), class: "category-menu"  %>
+        </div>
       </li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <li>
+        <div class="brand-list", id="brand-list">ブランド
+        </div>
+      </li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

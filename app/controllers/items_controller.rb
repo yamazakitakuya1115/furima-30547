@@ -44,6 +44,11 @@ class ItemsController < ApplicationController
     @search_word = params[:keyword]
   end
 
+  def category
+    @items = Item.where(category_id: params[:category_id]).order('created_at DESC')
+    @category = Category.find_by(id: params[:category_id]).name
+  end
+
   private
 
   def item_params

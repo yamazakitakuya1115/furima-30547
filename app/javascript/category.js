@@ -1,5 +1,4 @@
 function categories() {
-  console.log("loading OK!")
   const categoryList = document.getElementById("category-list");
   const categoryMenu = document.getElementById("category-menu");
 
@@ -7,11 +6,11 @@ function categories() {
   categoryList.addEventListener('click', function () {
     if (categoryMenu.getAttribute("style") == "display:block;") {
       categoryMenu.removeAttribute("style", "display:block");
-      categoryList.removeAttribute("style", "bacckground-color: wheat");
+      categoryList.removeAttribute("style", "bacckground-color: #fffacd");
 
     } else {
       categoryMenu.setAttribute("style", "display:block;");
-      categoryList.setAttribute("style", "background-color: wheat");
+      categoryList.setAttribute("style", "background-color: #fffacd");
     };
   });
 };
