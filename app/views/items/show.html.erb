@@ -86,18 +86,41 @@
   <%# /商品の概要 %>
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+    <p class="comment-title" id="comments"><< コメント >></p>
+    <% if @comments %>
+      <% @comments.each do |comment|%>
+        <% if comment.user_id == @item.user_id%>
+          <div class="comment-balloon-left">
+        <% else %>
+          <div class="comment-balloon-right">
+        <% end %>
+          <div class="comment-top">
+            <div class="comment-nickname">
+              <p>出品者：<%= "#{comment.user.nickname}" %></p>
+            </div>
+            <div class="comment-date">
+              <%= l comment.created_at, class: "comment-date" %>
+            </div>
+          </div>
+          <div class="comment-bottom">
+            <%= comment.text %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@item, @comment], local: true) do |f| %>
+        <%= f.text_area :text, class: "comment-text", placeholder: "コメントを入力してください" %>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+          <br>
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        </p>
+        <%= f.submit "コメントする", class: "comment-btn" %>
+      <% end %>
+    <% else %>
+      <p class="comment-login">※コメントをするためにはログインが必要です</p>
+    <% end %>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
@@ -107,7 +130,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
+  <%= link_to "#{@item.category.name}をもっと見る", category_path(category_id: @item.category_id), class: "another-item" %>
 </div>
 
 <%= render "shared/footer" %>
