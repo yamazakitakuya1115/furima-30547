@@ -7,4 +7,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get 'category' => 'items#category'
 end

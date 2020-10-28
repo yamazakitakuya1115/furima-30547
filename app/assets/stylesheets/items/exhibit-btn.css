@@ -7,8 +7,12 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
 }
 
+.category-list {
+  padding: 15px;
+}
 
 .new-btn :hover {
   background: lightpink;
