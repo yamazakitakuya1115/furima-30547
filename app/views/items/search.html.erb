@@ -3,7 +3,7 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>検索結果</h2>
+    <h2 class='title'>『<%= "#{@search_word}" %>』の検索結果</h2>
     <ul class='item-lists'>
       <% if @items.exists? %>
         <% @items.each do |item| %>
@@ -34,7 +34,9 @@
           </li>
         <% end %>
       <% else %>
-        <%= "『#{@search_word}』を含む商品は見つかりませんでした" %>
+        <div class="not-found">
+          <%= "『#{@search_word}』を含む商品は見つかりませんでした" %>
+        </div>
       <% end %>
     </ul>
   </div>
