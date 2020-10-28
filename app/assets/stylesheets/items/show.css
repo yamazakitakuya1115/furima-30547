@@ -217,7 +217,7 @@
 .comment-balloon-left {
   position: relative;
   display: inline-block;
-  margin: 10px 20px 10px 0;
+  margin: 10px 20px 10px -20px;
   padding: 7px 10px;
   width: 100%;
   color: #555;
