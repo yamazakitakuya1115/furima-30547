@@ -181,6 +181,7 @@
 
 .comment-nickname {
   font-weight: bold;
+  color: black;
 }
 
 .comment-date {
@@ -189,6 +190,7 @@
 
 .comment-bottom {
   text-align: left;
+  color: black;
 }
 
 .comment-balloon-right {
@@ -243,6 +245,7 @@
   padding: 10px;
   border: solid 5px #dedede;
   resize: none;
+  margin-top: 40px;
 }
 
 .comment-warn {
