@@ -125,21 +125,47 @@
 }
 
 .option {
-  display: flex;
-  justify-content: space-between;
   position: relative;
 }
 
-.favorite-btn {
+.favorite {
+  margin-bottom: 40px;
+}
+
+.favorite>a {
+  text-decoration: none;
+}
+
+.favorite-btn-delete {
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
+  height: 45px;
   color: rgb(249, 75, 0);
   border: 2px solid #ffb340;
+  background-color: #ffc062;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.favorite-btn-add {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  height: 45px;
+  color: rgb(249, 75, 0);
+  border: 2px solid #ffb340;
+  background-color: lightyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .favorite-star-icon {

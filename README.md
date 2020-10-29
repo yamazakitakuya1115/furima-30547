@@ -77,6 +77,7 @@
 ## favorites テーブル
 | Column | Type       | Option                         |
 | ------ | ---------- | ------------------------------ |
+| check  | boolean    | null: false, default: false    |
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 

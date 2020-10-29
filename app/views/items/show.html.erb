@@ -79,9 +79,18 @@
       </tbody>
     </table>
     <div class="option">
-      <div class="favorite-btn">
+      <div class="favorite">
+        <% if user_signed_in? %>
+          <% if @item.favorites.exists?(user_id: current_user.id) %>
+              <%= link_to 'お気に入りから削除', item_favorite_path(@item.id), method: :delete, class: "favorite-btn-delete" %>
+          <% else %>
+            <%= form_with(model: [@item, @favorite], local: true) do |f| %>
+              <%= f.submit "お気に入りに追加", class: "favorite-btn-add" %>
+            <% end %>
+          <% end %>
+        <% end %>
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+        <%= @item.favorites.ids.length %>人がお気に入りに登録しています
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
