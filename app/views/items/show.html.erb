@@ -41,8 +41,14 @@
       <% end %>
     <% end %>
 
-    <div class="item-explain-box">
-      <span><%= @item.explain %></span>
+    <div class="arrow-box">
+      <p class="explain-title">商品説明</p>
+      <div class="item-explain">
+        <%= @item.explain %>
+      </div>
+      <div class="item-listing-date">
+        出品日時：<%= l @item.created_at %>
+      </div>
     </div>
     <table class="detail-table">
       <tbody>
@@ -124,7 +130,8 @@
     <% end %>
     <% if user_signed_in? %>
       <%= form_with(model: [@item, @comment], local: true) do |f| %>
-        <%= f.text_area :text, class: "comment-text", placeholder: "コメントを入力してください" %>
+        <%= f.text_area :text, class: "comment-text", placeholder: "コメントを入力してください" if current_user.id != @item.user_id %>
+        <%= f.text_area :text, class: "comment-text", placeholder: "出品者としてコメントを入力してください" if current_user.id == @item.user_id %>
         <p class="comment-warn">
           相手のことを考え丁寧なコメントを心がけましょう。
           <br>

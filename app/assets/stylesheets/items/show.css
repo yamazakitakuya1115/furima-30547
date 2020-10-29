@@ -58,6 +58,7 @@
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  box-shadow: 4px 4px 10px gray;
 }
 
 
@@ -84,6 +85,7 @@
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  box-shadow: 4px 4px 10px gray;
 }
 
 .delete-btn :hover {
@@ -104,6 +106,7 @@
 .detail-table {
   margin-bottom: 30px;
   width: 100%;
+  box-shadow: 4px 4px 10px gray;
 }
 
 .detail-item {
@@ -158,6 +161,33 @@
 
 .report-flag-icon {
   margin-right: 5px;
+}
+
+.arrow-box {
+	position: relative;
+	background: #ffffff;
+  border: 1px solid #dedede;
+  width: 100%;
+  min-height: 200px;
+  margin: 40px 0;
+  padding: 10px 20px;
+  justify-content: space-between;
+  box-shadow: 4px 4px 10px gray;
+}
+
+.explain-title {
+  font-size: 20px;
+}
+
+.item-explain {
+  margin: 10px;
+  padding: 20px 0 50px 0;
+}
+
+.item-listing-date {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 
@@ -266,6 +296,11 @@
   border-radius: 100px;
   margin-bottom: 2vh;
   cursor: pointer;
+  box-shadow: 4px 4px 10px gray;
+}
+
+.comment-btn :hover {
+  background-color: red;
 }
 
 .comment-flag {
