@@ -87,7 +87,7 @@
 
   <div class="comment-box">
     <p class="comment-title" id="comments"><< コメント >></p>
-    <% if @comments %>
+    <% if @comments.exists? %>
       <% @comments.each do |comment|%>
         <% if comment.user_id == @item.user_id%>
           <div class="comment-balloon-left">
@@ -119,6 +119,8 @@
           </div>
         <% end %>
       <% end %>
+    <% else %>
+      <p>現在投稿されたコメントはありません</p>
     <% end %>
     <% if user_signed_in? %>
       <%= form_with(model: [@item, @comment], local: true) do |f| %>
