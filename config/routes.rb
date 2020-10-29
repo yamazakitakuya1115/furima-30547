@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     end
   end
   get 'category' => 'items#category'
+  resources :users, only: :show do
+    get 'favorite' => 'users#favorite'
+    get 'sell' => 'users#sell'
+  end
 end

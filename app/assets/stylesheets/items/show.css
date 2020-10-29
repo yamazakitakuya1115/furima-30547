@@ -124,12 +124,19 @@
   font-size: 14px;
 }
 
+.sell-info {
+  color: black;
+  font-weight: bold;
+}
+
 .option {
   position: relative;
 }
 
 .favorite {
   margin-bottom: 40px;
+  flex: block;
+  justify-content: center;
 }
 
 .favorite>a {
@@ -147,9 +154,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 4px 4px 10px gray;
 }
 
 .favorite-btn-add {
@@ -163,9 +171,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 4px 4px 10px gray;
 }
 
 .favorite-star-icon {

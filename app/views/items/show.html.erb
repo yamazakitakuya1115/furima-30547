@@ -54,11 +54,11 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @item.user.nickname %></td>
+          <td class="detail-value"><%= link_to "#{@item.user.nickname}",  user_sell_path(@item.user), class: "sell-info" %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @item.category.name %></td>
+          <td class="detail-value"><%= link_to "#{@item.category.name}", category_path(category_id: @item.category_id), class: "sell-info" %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
