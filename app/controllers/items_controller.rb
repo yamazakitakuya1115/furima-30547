@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    @front_item = Item.front_item(@item)
+    @back_item = Item.back_item(@item)
   end
 
   def edit
