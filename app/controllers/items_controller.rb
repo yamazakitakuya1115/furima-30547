@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
     @comments = @item.comments.includes(:user)
     @front_item = Item.front_item(@item)
     @back_item = Item.back_item(@item)
+    @favorite = Favorite.new
   end
 
   def edit

@@ -12,7 +12,7 @@
   <div class='nav'>
     <ul class='lists-left'>
       <li>
-        <div class="category-list", id="category-list">カテゴリーから探す
+        <div class="category-list", id="category-list">カテゴリー
         </div>
         <div class='categories hidden' id="category-menu">
           <%= link_to 'レディース', category_path(category_id: 1), class: "category-menu" %>
@@ -30,11 +30,13 @@
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-        <li><%= link_to "#{current_user.nickname}さん", "#", class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout", data: { confirm: "ログアウトしますか？" }  %></li>
+        <li><%= link_to '出品中', user_sell_path(current_user.id), class: "menu-btn" %></li>
+        <li><%= link_to 'お気に入り', user_favorite_path(current_user.id), class: "menu-btn" %></li>
+        <li><%= link_to "#{current_user.nickname}", user_path(current_user.id), class: "menu-btn" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-btn", data: { confirm: "ログアウトしますか？" }  %></li>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "new-user-btn" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "new-user-btn" %></li>
       <% end %>
     </ul>
   </div>

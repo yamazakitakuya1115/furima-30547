@@ -124,22 +124,57 @@
   font-size: 14px;
 }
 
+.sell-info {
+  color: black;
+  font-weight: bold;
+}
+
 .option {
-  display: flex;
-  justify-content: space-between;
   position: relative;
 }
 
-.favorite-btn {
+.favorite {
+  margin-bottom: 40px;
+  flex: block;
+  justify-content: center;
+}
+
+.favorite>a {
+  text-decoration: none;
+}
+
+.favorite-btn-delete {
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
+  height: 45px;
   color: rgb(249, 75, 0);
   border: 2px solid #ffb340;
+  background-color: #ffc062;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 4px 4px 10px gray;
+}
+
+.favorite-btn-add {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  height: 45px;
+  color: rgb(249, 75, 0);
+  border: 2px solid #ffb340;
+  background-color: lightyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 4px 4px 10px gray;
 }
 
 .favorite-star-icon {

@@ -54,11 +54,11 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @item.user.nickname %></td>
+          <td class="detail-value"><%= link_to "#{@item.user.nickname}",  user_sell_path(@item.user), class: "sell-info" %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @item.category.name %></td>
+          <td class="detail-value"><%= link_to "#{@item.category.name}", category_path(category_id: @item.category_id), class: "sell-info" %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
@@ -79,9 +79,16 @@
       </tbody>
     </table>
     <div class="option">
-      <div class="favorite-btn">
+      <div class="favorite">
+        <% if user_signed_in? %>
+          <% if @item.favorites.exists?(user_id: current_user.id) %>
+            <%= link_to 'お気に入りから削除', item_favorite_path(@item.id), method: :delete, class: "favorite-btn-delete" %>
+          <% else %>
+            <%= link_to 'お気に入りに追加', item_favorites_path(@item.id), method: :post, class: "favorite-btn-add" %>
+          <% end %>
+        <% end %>
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+        <%= @item.favorites.ids.length %>人がお気に入りに登録しています
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>

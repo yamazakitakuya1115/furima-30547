@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   has_one :order
   has_many :comments, dependent: :destroy
+  has_many :favorites
 
   with_options presence: true do
     validates :image

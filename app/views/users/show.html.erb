@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+
+<div class= "user-information-title">
+  <%= @user.nickname %>さんの登録情報
+</div>
+<div class="user-information">
+  <table class="user-table">
+    <tbody>
+      <tr>
+        <th class="user-item">ユーザー名</th>
+        <td class="user-value"><%= @user.nickname %></td>
+      </tr>
+      <tr>
+        <th class="user-item">メールアドレス</th>
+        <td class="user-value"><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th class="user-item">名前（漢字）</th>
+        <td class="user-value"><%= @user.first_kanji %> <%= @user.last_kanji %></td>
+      </tr>
+      <tr>
+        <th class="user-item">名前（カナ）</th>
+        <td class="user-value"><%= @user.first_kana %> <%= @user.last_kana %></td>
+      </tr>
+      <tr>
+        <th class="user-item">誕生日</th>
+        <td class="user-value"><%= @user.birthday %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%= render "shared/footer" %>
