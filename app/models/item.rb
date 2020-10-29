@@ -30,4 +30,12 @@ class Item < ApplicationRecord
       Item.all
     end
   end
+
+  def self.back_item(back_item)
+    Item.where("id < ?", back_item.id).order("id DESC").first
+  end
+
+  def self.front_item(front_item)
+    Item.where("id > ?", front_item.id).order("id ASC").first
+  end
 end

@@ -137,12 +137,8 @@
     <% end %>
   </div>
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
+    <%= link_to '＜ 前の商品', item_path(@front_item.id),class: "change-item-btn" if @front_item %>
+    <%= link_to '後ろの商品 ＞', item_path(@back_item.id),class: "change-item-btn" if @back_item %>
   </div>
   <%= link_to "#{@item.category.name}をもっと見る", category_path(category_id: @item.category_id), class: "another-item" %>
 </div>
