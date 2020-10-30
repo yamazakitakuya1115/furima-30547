@@ -54,11 +54,11 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= link_to "#{@item.user.nickname}",  user_sell_path(@item.user), class: "sell-info" %></td>
+          <td class="detail-value"><%= link_to "#{@item.user.nickname}",  user_sell_path(@item.user) %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= link_to "#{@item.category.name}", category_path(category_id: @item.category_id), class: "sell-info" %></td>
+          <td class="detail-value"><%= link_to "#{@item.category.name}", category_path(category_id: @item.category_id) %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
@@ -151,8 +151,26 @@
     <% end %>
   </div>
   <div class="links">
-    <%= link_to '＜ 前の商品', item_path(@front_item.id),class: "change-item-btn" if @front_item %>
-    <%= link_to '後ろの商品 ＞', item_path(@back_item.id),class: "change-item-btn" if @back_item %>
+    <% if @front_item %>
+      <div class="next-item">
+        <%= link_to item_path(@front_item.id) do %>
+          <div class="item-img-top">
+            <%= image_tag @front_item.image, class: "item-img-mini" if @front_item.image %>
+          </div>
+          <p class="change-item-btn">＜ 前の商品</p>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @back_item %>
+      <div class="next-item">
+        <%= link_to item_path(@back_item.id) do %>
+          <div class="item-img-top">
+            <%= image_tag @back_item.image, class: "item-img-mini" if @back_item.image %>
+          </div>
+          <p class="change-item-btn">後ろの商品 ＞</p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <%= link_to "#{@item.category.name}をもっと見る", category_path(category_id: @item.category_id), class: "another-item" %>
 </div>

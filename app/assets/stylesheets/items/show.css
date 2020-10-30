@@ -58,7 +58,7 @@
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
-  box-shadow: 4px 4px 10px gray;
+  box-shadow: 2px 2px 10px gray;
 }
 
 
@@ -85,7 +85,7 @@
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
-  box-shadow: 4px 4px 10px gray;
+  box-shadow: 2px 2px 10px gray;
 }
 
 .delete-btn :hover {
@@ -105,8 +105,9 @@
 
 .detail-table {
   margin-bottom: 30px;
-  width: 100%;
-  box-shadow: 4px 4px 10px gray;
+  min-width: 40vw;
+  max-width: 90vw;
+  box-shadow: 2px 2px 10px gray;
 }
 
 .detail-item {
@@ -124,19 +125,13 @@
   font-size: 14px;
 }
 
-.sell-info {
-  color: black;
-  font-weight: bold;
-}
-
 .option {
   position: relative;
+  text-align: center;
 }
 
 .favorite {
   margin-bottom: 40px;
-  flex: block;
-  justify-content: center;
 }
 
 .favorite>a {
@@ -157,7 +152,8 @@
   margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 4px 4px 10px gray;
+  box-shadow: 2px 2px 10px gray;
+  margin: 0 auto;
 }
 
 .favorite-btn-add {
@@ -174,7 +170,8 @@
   margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 4px 4px 10px gray;
+  box-shadow: 2px 2px 10px gray;
+  margin: 0 auto;
 }
 
 .favorite-star-icon {
@@ -185,13 +182,10 @@
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
-
   padding: 1vh 0;
   color: black;
   border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
 }
 
 .report-flag-icon {
@@ -202,10 +196,11 @@
 	position: relative;
 	background: #ffffff;
   border: 1px solid #dedede;
-  width: 100%;
+  min-width: 40vw;
+  max-width: 50vw;
   min-height: 200px;
-  margin: 40px 0;
-  padding: 10px 20px;
+  margin: 20px 0;
+  padding: 10px 10px;
   justify-content: space-between;
   box-shadow: 4px 4px 10px gray;
 }
@@ -263,7 +258,8 @@
   display: inline-block;
   margin: 10px 0 10px 20px;
   padding: 7px 10px;
-  width: 100%;
+  min-width: 400px;
+  max-width:100%;
   color: #555;
   font-size: 16px;
   background: #d8f6ce;
@@ -286,7 +282,8 @@
   display: inline-block;
   margin: 10px 20px 10px -20px;
   padding: 7px 10px;
-  width: 100%;
+  min-width: 400px;
+  max-width:100%;
   color: #555;
   font-size: 16px;
   background: #f8e0ec;
@@ -354,21 +351,38 @@
 
 .links {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 50vw;
+}
+
+.next-item {
+  display: inline;
+  text-align: center;
+  padding: 0 40px;
 }
 
 .change-item-btn {
   font-size: 30px;
-  text-decoration: none;
-  color: #3CCACE;
 }
 
 .another-item {
   display: block;
   margin: 30px 0px 8px;
-  color: #3CCACE;
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+
+
+.item-img-mini {
+  width: 15vh;
+  height: 15vh;
+}
+
+.item-img-mini :hover {
+  width: 15vh;
+  height: 15vh;
+  opacity: 0.7;
+  transition: 200ms;
 }

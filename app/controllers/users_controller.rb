@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :favorite, :sell]
-  before_action :move_to_index_show, only: :show
+  before_action :authenticate_user!, only: [:show, :favorite]
   before_action :move_to_index, only: :favorite
 
   def show

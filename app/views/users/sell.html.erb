@@ -18,9 +18,9 @@
                 <% end %>
             </div>
             <div class='item-info'>
-              <h3 class='item-name'>
+              <div class='item-name'>
                 <%= item.name %>
-              </h3>
+              </div>
               <div class='item-price'>
                 <span><%= item.price %>円<br>(税込み)</span>
               <div class='star-btn'>
@@ -36,5 +36,5 @@
     <% end %>
   </ul>
 </div>
-
+<%= render "shared/purchase_btn" %>
 <%= render "shared/footer" %>

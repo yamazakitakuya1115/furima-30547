@@ -1,9 +1,12 @@
 a {
+  font-weight: bold;
+  color: #3CCACE;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: orange;
+  text-decoration: underline orange;
 }
 
 .main {
@@ -311,8 +314,6 @@ li>.category-list {
 .item-contents>.subtitle {
   font-size: 3vh;
   margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
   font-weight: bold;
 }
 
@@ -362,13 +363,11 @@ li>.category-list {
 
 .item-info {
   background-color: #FFF;
-  color: black;
   padding: 1vw;
 }
 
 .item-name {
   font-size: 2.5vh;
-  color: black;
 }
 
 .item-name :hover {
@@ -378,7 +377,6 @@ li>.category-list {
 
 .item-price {
   font-size: 1.5vh;
-  color: black;
   display: flex;
   justify-content: space-between;
 }

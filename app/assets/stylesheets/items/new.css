@@ -1,11 +1,4 @@
 /* border-bottom: 1px solid #eee; */
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
 
 .items-sell-contents {
   background-color: #f5f5f5;
