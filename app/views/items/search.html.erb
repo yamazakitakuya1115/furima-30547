@@ -27,7 +27,7 @@
                   <span><%= item.price %>円<br>(税込み)</span>
                 <div class='star-btn'>
                   <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
+                  <span class='star-count'><%= item.favorites.ids.length %></span>
                 </div>
               </div>
             <% end %>
