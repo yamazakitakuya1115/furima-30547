@@ -18,6 +18,7 @@
 - has_many :orders
 - has_many :comments
 - has_many :favorites
+- has_many :reports
 
 ## items テーブル
 | Column        | Type       | Options                        |
@@ -37,6 +38,7 @@
 - has_one :order
 - has_many :comments
 - has_many: favorites
+- has_many: reports
 
 ## addresses テーブル
 | Column         | Type       | Options                        |
@@ -79,6 +81,18 @@
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+## reports テーブル
+| Column  | Type       | Option                         |
+| ------- | ---------- | ------------------------------ |
+| kind    | integer    | null: false                    |
+| message | text       |                                |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
