@@ -3,14 +3,14 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
+    @item = Item.find(params[:item_id])
     favorite = Favorite.create(favorite_params)
-    redirect_to "/items/#{favorite.item.id}"
   end
 
   def destroy
+    @item = Item.find(params[:item_id])
     favorite = Favorite.find_by(item_id: params[:item_id], user_id: current_user.id)
     favorite.destroy
-    redirect_to item_path(favorite.item_id)
   end
 
   private

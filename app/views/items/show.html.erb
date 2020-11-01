@@ -1,4 +1,6 @@
 <%= render "shared/header" %>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+</script>
 
 <%# 商品の概要 %>
 <div class="item-show">
@@ -79,16 +81,8 @@
       </tbody>
     </table>
     <div class="option">
-      <div class="favorite">
-        <% if user_signed_in? %>
-          <% if @item.favorites.exists?(user_id: current_user.id) %>
-            <%= link_to 'お気に入りから削除', item_favorite_path(@item.id), method: :delete, class: "favorite-btn-delete" %>
-          <% else %>
-            <%= link_to 'お気に入りに追加', item_favorites_path(@item.id), method: :post, class: "favorite-btn-add" %>
-          <% end %>
-        <% end %>
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <%= @item.favorites.ids.length %>人がお気に入りに登録しています
+      <div id="favorite-<%= @item.id %>">
+        <%= render partial: 'favorites/favorite_btn', locals: { item: @item } %>
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>

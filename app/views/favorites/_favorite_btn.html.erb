@@ -1,0 +1,11 @@
+      <div class="favorite">
+        <% if user_signed_in? %>
+          <% if item.favorites.exists?(user_id: current_user.id) %>
+            <%= link_to 'お気に入りから削除', item_favorite_path(item.id), method: :delete, class: "favorite-btn-delete", remote: true %>
+          <% else %>
+            <%= link_to 'お気に入りに追加', item_favorites_path(item.id), method: :post, class: "favorite-btn-add", remote: true %>
+          <% end %>
+        <% end %>
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <%= item.favorites.ids.length %>人がお気に入りに登録しています
+      </div>
