@@ -89,7 +89,7 @@
 ## reports テーブル
 | Column  | Type       | Option                         |
 | ------- | ---------- | ------------------------------ |
-| kind    | integer    | null: false                    |
+| kind_id | integer    | null: false                    |
 | message | text       |                                |
 | user    | references | null: false, foreign_key: true |
 | item    | references | null: false, foreign_key: true |

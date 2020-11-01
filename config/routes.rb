@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :reports, only: [:index, :new, :create] do
+    end
   end
   get 'category' => 'items#category'
   resources :users, only: [:show, :edit, :update] do
