@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+<div class="report-form">
+<h1 class="report-title">不適切な商品の通報</h1>
+  <div class= "report-item">
+    <p class="weight-bold-text">対象の商品</p>
+    <div class='item-img-content'>
+      <%= image_tag @item.image, class: "item-img" if @item.image.attached? %>
+    </div>
+    <div class='item-info'>
+      <div class='item-name'>
+        <%= @item.name %>
+      </div>
+      <div class='item-price'>
+        <span><%= @item.price %>円<br>(税込み)</span>
+      </div>
+    </div>
+  </div>
+  <%= form_with(model: [@item, @report], local: true) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="reports-detail">
+      <div class="report-kind">
+        <div class="weight-bold-text">
+          通報の種類
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:kind_id, Kind.all, :id, :name, {}, {class:"select-box", id:"report-kind"}) %>
+      </div>
+      <div class= "report-message">
+        <div class="weight-bold-text">
+          通報内容の詳細（任意）
+        </div>
+        <%= f.text_area :message, class:"items-text", placeholder:"通報内容を入力してください", maxlength:"1000" %>
+      </div>
+      <div class="report-btn-set">
+        <%= f.submit "通報する" ,class:"report-btn",  data: { confirm: "入力された内容で通報しますか？" } %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= render "shared/footer" %>

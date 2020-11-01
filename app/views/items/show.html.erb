@@ -84,10 +84,17 @@
       <div id="favorite-<%= @item.id %>">
         <%= render partial: 'favorites/favorite_btn', locals: { item: @item } %>
       </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
+
+
+
+      <div class="report-btn-set">
+        <% if user_signed_in? %>
+          <%= link_to '不適切な商品の通報', new_item_report_path(@item.id), class:"report-btn" %>
+        <% end %>
       </div>
+
+
+
     </div>
   </div>
   <%# /商品の概要 %>

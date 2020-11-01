@@ -21,6 +21,8 @@ ja:
         prefecture_id: 発送元の地域
         schedule_id: 発送までの日数
         price: 販売価格
+      report:
+        kind_id: 通報の種類
   activemodel:
     attributes:
       order_address:
