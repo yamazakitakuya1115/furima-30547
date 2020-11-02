@@ -1,5 +1,6 @@
-if ((document.URL.match(/new/)) || document.URL.match(/edit/)) {
-  document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.getElementById('image-preview')) {
     const ImageList = document.getElementById('image-preview');
 
     const createImageHTML = (blob) => {
@@ -26,5 +27,5 @@ if ((document.URL.match(/new/)) || document.URL.match(/edit/)) {
 
       createImageHTML(blob);
     });
-  });
-}
+  };
+});
