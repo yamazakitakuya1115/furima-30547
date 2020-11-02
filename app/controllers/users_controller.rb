@@ -34,20 +34,15 @@ class UsersController < ApplicationController
 
   def move_to_index
     user = User.find(params[:user_id])
-    unless current_user.id == user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == user.id
   end
 
   def move_to_index2
     user = User.find(params[:id])
-    unless current_user.id == user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == user.id
   end
 
   def user_params
     params.require(:user).permit(:nickname, :email, :password)
   end
-
 end

@@ -66,8 +66,6 @@ class ItemsController < ApplicationController
 
   def move_to_index
     # 出品者ではない または 売却済みである ならばトップページへ遷移
-    if current_user.id != @item.user.id || @item.order
-    redirect_to action: :index 
-    end
+    redirect_to action: :index if current_user.id != @item.user.id || @item.order
   end
 end

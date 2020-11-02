@@ -24,5 +24,4 @@ class ReportsController < ApplicationController
   def report_params
     params.require(:report).permit(:kind_id, :message).merge(item_id: params[:item_id], user_id: current_user.id)
   end
-
 end

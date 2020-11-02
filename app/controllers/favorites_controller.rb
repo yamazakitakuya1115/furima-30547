@@ -1,5 +1,4 @@
 class FavoritesController < ApplicationController
-
   before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
@@ -16,7 +15,6 @@ class FavoritesController < ApplicationController
   private
 
   def favorite_params
-    params.permit().merge(user_id: current_user.id, item_id: params[:item_id])
+    params.permit.merge(user_id: current_user.id, item_id: params[:item_id])
   end
-
 end

@@ -26,7 +26,7 @@ class Item < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'は300〜9,999,999円に設定してください' }
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Item.where('name LIKE(?)', "%#{search}%")
     else
       Item.all
@@ -34,10 +34,10 @@ class Item < ApplicationRecord
   end
 
   def self.back_item(back_item)
-    Item.where("id < ?", back_item.id).order("id DESC").first
+    Item.where('id < ?', back_item.id).order('id DESC').first
   end
 
   def self.front_item(front_item)
-    Item.where("id > ?", front_item.id).order("id ASC").first
+    Item.where('id > ?', front_item.id).order('id ASC').first
   end
 end
