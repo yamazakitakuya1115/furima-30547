@@ -98,11 +98,6 @@
   text-decoration: none;
 }
 
-.item-explain-box {
-  font-size: 18px;
-  margin: 40px 0px;
-}
-
 .detail-table {
   margin-bottom: 30px;
   min-width: 40vw;
@@ -220,7 +215,7 @@
   min-width: 40vw;
   max-width: 50vw;
   min-height: 200px;
-  margin: 20px 0;
+  margin: 50px 0 20px 0;
   padding: 10px 10px;
   justify-content: space-between;
   box-shadow: 4px 4px 10px gray;
@@ -233,6 +228,7 @@
 .item-explain {
   margin: 10px;
   padding: 20px 0 50px 0;
+  white-space: pre-line;
 }
 
 .item-listing-date {
@@ -270,8 +266,10 @@
 }
 
 .comment-bottom {
-  text-align: left;
+  text-align: start;
   color: black;
+  white-space: pre-line;
+  margin: -10px 0 0 0; 
 }
 
 .comment-balloon-right {
