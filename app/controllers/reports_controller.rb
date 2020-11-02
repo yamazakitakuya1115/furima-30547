@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
-    @item = Item.find_by(params[:item_id])
+    @item = Item.find_by(id: params[:item_id])
   end
 
   def create
@@ -14,7 +14,7 @@ class ReportsController < ApplicationController
     if @report.save
       redirect_to action: :index
     else
-      @item = Item.find_by(params[:item_id])
+      @item = Item.find_by(id: params[:item_id])
       render :new
     end
   end
