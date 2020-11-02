@@ -54,7 +54,6 @@ function item() {
     };
   });
 
-
   // 商品説明の文字数カウント
   const itemExplain = document.getElementById("item-info");
   itemExplain.addEventListener("keyup", () => {
@@ -69,9 +68,6 @@ function item() {
     };
   });
 };
-
-
-
 
 // 編集ページ読み込み時に表示する内容
 function editPage() {
@@ -88,8 +84,19 @@ function editPage() {
   addTaxPrice.innerHTML = `${taxPrice}円`;
   const gainPrice = Math.floor(itemPrice.value - taxPrice);
   profit.innerHTML = `${gainPrice}円`;
-};
 
+  // 商品名の文字数カウント
+  const itemName = document.getElementById("item-name");
+  const itemNameCountVal = itemName.value.length;
+  const itemNameCount = document.getElementById("item-name-count");
+  itemNameCount.innerHTML = `${itemNameCountVal}`;
+
+  // 商品説明の文字数カウント
+  const itemExplain = document.getElementById("item-info");
+  const itemExplainCountVal = itemExplain.value.length;
+  const itemExplainCount = document.getElementById("item-explain-count");
+  itemExplainCount.innerHTML = `${itemExplainCountVal}`;
+};
 
 if (document.URL.match(/new/) || (document.URL.match(/edit/))) {
   window.addEventListener('load', item);
