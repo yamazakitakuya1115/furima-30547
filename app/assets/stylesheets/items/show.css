@@ -276,8 +276,8 @@
 
 .comment-balloon-right {
   position: relative;
-  display: inline-block;
-  margin: 10px 0 10px 20px;
+  display: block;
+  margin: 10px 0 20px 20px;
   padding: 7px 10px;
   min-width: 400px;
   max-width:100%;
@@ -300,8 +300,8 @@
 
 .comment-balloon-left {
   position: relative;
-  display: inline-block;
-  margin: 10px 20px 10px -20px;
+  display: block;
+  margin: 10px 20px 20px -20px;
   padding: 7px 10px;
   min-width: 400px;
   max-width:100%;
